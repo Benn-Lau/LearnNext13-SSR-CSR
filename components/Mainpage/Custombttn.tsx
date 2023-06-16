@@ -2,11 +2,11 @@
 import { CustomBttnProps } from "@/types"
 import Image from "next/image"
 
-export default function Custombttn({title,containerStyles,handleClick}:CustomBttnProps) {
+export default function Custombttn({title,containerStyles,handleClick,btnType,disable}:CustomBttnProps) {
   return (
     <button 
-        disabled={false}
-        type={"button"}
+        disabled={false || disable}
+        type={btnType || "button"}
         className={`custom-btn ${containerStyles}`}
         onClick={handleClick}
     >
