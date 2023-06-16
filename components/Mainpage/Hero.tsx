@@ -25,8 +25,8 @@ export default function HeroSection() {
           <Image
             src={"/hero.png"}
             alt="Car Blue Color Shinny Sedan" 
-            fill
             className="object-contain"
+            fill
           />
         </div>
         <div className=" hero__image-overlay"></div>

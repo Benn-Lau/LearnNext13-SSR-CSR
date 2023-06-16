@@ -23,22 +23,37 @@ export default function Footer() {
             return (
               <div className="footer__link" key={items.title}>
                 <h3 className=" font-bold">{items.title}</h3>
-                {items.links.map((link) => {
-                  return (
-                    <Link
-                      key={link.title}
-                      href={link.url}
-                      className=" text-gray-500"
-                    >
-                      {link.title}
-                    </Link>
-                  );
-                })}
+                <div  className="flex flex-col gap-5" >
+                  {items.links.map((link) => {
+                    return (
+                      <Link
+                        key={link.title}
+                        href={link.url}
+                        className=" text-gray-500"
+                      >
+                        {link.title}
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
-        </div>
+        </div>        
       </div>
+
+      <div className='flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10'>
+      <p>@2023 CarHub. All rights reserved</p>
+
+      <div className="footer__copyrights-link">
+        <Link href="/" className="text-gray-500">
+          Privacy & Policy
+        </Link>
+        <Link href="/" className="text-gray-500">
+          Terms & Condition
+        </Link>
+      </div>
+    </div>
     </footer>
   );
 }
