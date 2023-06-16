@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { footerLinks } from "@/constants";
 export default function Footer() {
   return (
     <footer className=" flex flex-col text-black-100 mt-5 border-t border-gray-100">
@@ -17,6 +17,26 @@ export default function Footer() {
             Carhub 2023 <br />
             All Rights Reserved &copy;
           </p>
+        </div>
+        <div className="footer__links">
+          {footerLinks.map((items) => {
+            return (
+              <div className="footer__link" key={items.title}>
+                <h3 className=" font-bold">{items.title}</h3>
+                {items.links.map((link) => {
+                  return (
+                    <Link
+                      key={link.title}
+                      href={link.url}
+                      className=" text-gray-500"
+                    >
+                      {link.title}
+                    </Link>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
       </div>
     </footer>
