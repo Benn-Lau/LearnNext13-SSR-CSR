@@ -7,3 +7,12 @@ export interface CustomBttnProps {
     btnType?: "button"| "submit" 
     disable?:boolean
 }
+
+export interface CustomFilterProps {
+    title:string
+}
+
+export interface SearchManufacturerProps {
+    manufacturer:string
+    setManufacturer?:(manufacturer:string) => void
+}
