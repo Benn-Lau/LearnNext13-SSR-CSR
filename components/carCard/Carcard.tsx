@@ -13,7 +13,7 @@ export default function Carcard({ car }: CarCard_Props) {
   const carRent = calculateCarRent(city_mpg, year);
   const [isOpen, setisOpen] = useState(false);
   return (
-    <div className="car-card group-[]:">
+    <div className="car-card group">
       <div className=" car-card__content">
         <h2 className="car-card__content-title">
           {make} {model}
@@ -57,8 +57,7 @@ export default function Carcard({ car }: CarCard_Props) {
             <p className="text-[14px]">{city_mpg} MPG</p>
           </div>
         </div>
-        <div className="hidden group-hover:flex absolute bottom-0 w-full z-10">
-          {/* BUG : I found the problem ,I remove the div parent for Custombttn it shows , I remove the className css styling it show proved that the error come from styling of the element causing it to now show up when hove like it supporse to  */}
+        <div className="car-card__btn-container">
           <Custombttn
             title="View More"
             containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
