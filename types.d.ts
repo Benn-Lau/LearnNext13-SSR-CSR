@@ -33,3 +33,9 @@ export interface CarProps {
   transmission: string;
   year: number;
 }
+
+export interface CarDetialsProps {
+  isOpen:boolean
+  closeModal: () => void ;
+  car:CarProps
+}
