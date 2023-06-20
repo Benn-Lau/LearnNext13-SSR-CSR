@@ -30,7 +30,7 @@ export default function SearchManufacturer({
               alt="Car Logo"
               width={20}
               height={20}
-              className="relative w-full"
+              className=" ml-4"
             />
           </Combobox.Button>
           <Combobox.Input
