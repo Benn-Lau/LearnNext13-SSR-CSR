@@ -1,6 +1,6 @@
 "use client";
 import { CarProps } from "@/types";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import React, { useState } from "react";
 import Image from "next/image";
 import Custombttn from "../Mainpage/Custombttn";
@@ -38,7 +38,7 @@ export default function Carcard({ car }: CarCard_Props) {
         <div className=" flex group-hover:invisible w-full justify-between text-grey">
           <div className=" flex flex-col justify-center items-center gap-2">
             <Image
-              src={"/steering-wheel.svg"}
+              src={generateCarImageUrl(car)}
               alt="steering wheel svg"
               width={20}
               height={20}
