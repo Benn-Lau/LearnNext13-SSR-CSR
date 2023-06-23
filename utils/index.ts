@@ -1,5 +1,13 @@
 import { CarProps } from "@/types";
 
+function getEnvVariable()  {
+  
+} 
+
+
+
+
+
 export async function fetchCars() {
   const headers = {
     "X-RapidAPI-Key": `${process.env.X_RapidAPI_Key}`,
@@ -38,7 +46,7 @@ export const generateCarImageUrl =(car: CarProps, angle?: string) => {
 
   const { make, year, model } = car;
 
-  url.searchParams.append("customer", `${process.env.CarImage_API_Key}`);
+  url.searchParams.append("customer", `${process.env.NEXT_PUBLIC_CarImage_API_Key}`);
   url.searchParams.append("make", make);
   url.searchParams.append("modelFamily", model.split(" ")[0]);
   url.searchParams.append("zoomType", "fullscreen");
@@ -49,3 +57,7 @@ export const generateCarImageUrl =(car: CarProps, angle?: string) => {
 
   return `${url.href}`;
 };
+
+
+
+
