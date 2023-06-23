@@ -1,10 +1,16 @@
-import { CarDetialsProps } from "@/types";
 import Image from "next/image";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { split } from "postcss/lib/list";
+import { generateCarImageUrl } from "@/utils";
+import { CarProps } from "@/types";
+export interface CarDetialsProps {
+  isOpen: boolean;
+  closeModal: () => void;
+  car: CarProps;
+}
 
 export default function CarDetails({
+  /*ts.expect.error */
   isOpen,
   closeModal,
   car,
@@ -56,7 +62,7 @@ export default function CarDetails({
                   <div className=" flex-1 flex flex-col gap-3">
                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                       <Image
-                        src={"/hero.png"}
+                        src={generateCarImageUrl(car)}
                         alt="car modal"
                         fill
                         priority
@@ -66,7 +72,7 @@ export default function CarDetails({
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={generateCarImageUrl(car, "29")}
                           alt="car modal"
                           fill
                           priority
@@ -75,18 +81,19 @@ export default function CarDetails({
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={generateCarImageUrl(car, "33")}
                           alt="car modal"
                           fill
-                          priority
+                          priority={true}
                           className="object-contain"
                         />
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={generateCarImageUrl(car, "13")}
                           alt="car modal"
                           fill
+                          sizes="(max-width:708px)"
                           priority
                           className="object-contain"
                         />
@@ -103,8 +110,12 @@ export default function CarDetails({
                           className="flex justify-between gap-5 w-full text-right"
                           key={key}
                         >
-                          <h4 className="text-grey capitalize">{key.split('_').join(" ")}</h4>
-                          <p className=" text-black-100 font-semibold">{value}</p>
+                          <h4 className="text-grey capitalize">
+                            {key.split("_").join(" ")}
+                          </h4>
+                          <p className=" text-black-100 font-semibold">
+                            {value}
+                          </p>
                         </div>
                       ))}
                     </div>

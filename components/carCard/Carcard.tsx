@@ -27,7 +27,7 @@ export default function Carcard({ car }: CarCard_Props) {
       </p>
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src={"/hero.png"}
+          src={generateCarImageUrl(car)}
           alt="car modal"
           fill
           priority
@@ -38,7 +38,7 @@ export default function Carcard({ car }: CarCard_Props) {
         <div className=" flex group-hover:invisible w-full justify-between text-grey">
           <div className=" flex flex-col justify-center items-center gap-2">
             <Image
-              src={generateCarImageUrl(car)}
+              src={"/steering-wheel.svg"}
               alt="steering wheel svg"
               width={20}
               height={20}
