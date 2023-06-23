@@ -13,6 +13,7 @@ I hope I learn somthing from this project
 
 ### Learning Markdown 
  - double space to have a soft break 
+ - CTRL + SHIFT + V to view the Markdown
 
 
 ![Alt text](/public/github.svg "GitHub LOGO")
