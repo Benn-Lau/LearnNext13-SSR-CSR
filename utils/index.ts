@@ -53,7 +53,7 @@ export const generateCarImageUrl =(car: CarProps, angle?: string) => {
   url.searchParams.append("modelYear", `${year}`);
   // url.searchParams.append('zoomLevel', zoomLevel);
   url.searchParams.append("angle", `${angle}`);
-  console.log(url.href)
+  
 
   return `${url.href}`;
 };
