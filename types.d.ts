@@ -39,3 +39,7 @@ export interface CarDetialsProps {
   closeModal: () => void ;
   car:CarProps
 }
+
+export interface SeartBttnProps {
+  otherClasses?:string
+}
