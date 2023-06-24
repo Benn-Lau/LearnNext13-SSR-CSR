@@ -22,3 +22,8 @@ This is a project from javascript mastery ,
   Link:  https://youtu.be/pUNSHPyVryU
 
   <!-- Link bruh so ugly -->
+
+## Bug in this application causing scroll reseting
+
+more info on git hub link:https://github.com/vercel/next.js/issues/49087
+note: this is not my fault its next js team ... I hope it fix 24/06/23 20:03
