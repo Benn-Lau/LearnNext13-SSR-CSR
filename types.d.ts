@@ -6,8 +6,8 @@ export interface CustomBttnProps {
   handleClick?: MouseEventHandler;
   btnType?: "button" | "submit";
   disable?: boolean;
-  textStyles? : string 
-  rightIcon? : string
+  textStyles?: string;
+  rightIcon?: string;
 }
 
 export interface CustomFilterProps {
@@ -35,11 +35,19 @@ export interface CarProps {
 }
 
 export interface CarDetialsProps {
-  isOpen:boolean
-  closeModal: () => void ;
-  car:CarProps
+  isOpen: boolean;
+  closeModal: () => void;
+  car: CarProps;
 }
 
 export interface SeartBttnProps {
-  otherClasses?:string
+  otherClasses?: string;
+}
+
+export interface FilterProps {
+  manufacturer: string;
+  year: number;
+  fuel: string;
+  limit: number;
+  model: string;
 }
