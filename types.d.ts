@@ -10,8 +10,13 @@ export interface CustomBttnProps {
   rightIcon?: string;
 }
 
+export interface OptionProps {
+  title: string
+  value: string
+}
 export interface CustomFilterProps {
   title: string;
+  options: OptionProps[]
 }
 
 export interface SearchManufacturerProps {

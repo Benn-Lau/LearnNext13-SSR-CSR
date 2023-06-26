@@ -2,7 +2,7 @@ import CustomFilter from "@/components/Mainpage/CustomFilter";
 import HeroSection from "@/components/Mainpage/Hero";
 import SearchBar from "@/components/Mainpage/SearchBar";
 import Carcard from "@/components/carCard/Carcard";
-import { manufacturers } from "@/constants";
+import { fuels, manufacturers, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
@@ -28,8 +28,8 @@ export default async function Home({searchParams}:HomeProps) {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter title="fuel" />
-            <CustomFilter title="year" />
+            <CustomFilter title="fuel" options={fuels}/>
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
         {!isDataEmpty ? (
