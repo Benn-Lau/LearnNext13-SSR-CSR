@@ -41,6 +41,7 @@ export default async function Home({ searchParams }: HomeProps) {
               ))}
             </div>
             <ShowMore 
+              /** //fixed  OG code have earchParams.pageNumber which is not a property in the url params */
               pageNumber={(searchParams.limit || 10) / 10}
               isNext={(searchParams.limit || 10) > allCars.length} />
           </section>
