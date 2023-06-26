@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { CustomFilterProps } from "@/types";
 import React, { Fragment, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -6,7 +6,7 @@ import { Listbox, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { updateSearchParams } from "@/utils";
 export default function CustomFilter(props: CustomFilterProps) {
-  const router = useRouter()
+  const router = useRouter();
   const { title, options } = props;
   const [selected, setselected] = useState(options[0]);
 
@@ -16,10 +16,15 @@ export default function CustomFilter(props: CustomFilterProps) {
     router.push(newPathName);
   };
 
-  
   return (
     <div className=" w-fit">
-      <Listbox value={selected} onChange={(e) => setselected(e)}>
+      <Listbox
+        value={selected}
+        onChange={(e) => {
+          setselected(e);
+          handleUpdateParams(e);
+        }}
+      >
         <div className=" relative w-fit z-10">
           <Listbox.Button className={"custom-filter__btn"}>
             <span className=" block truncate">{selected.title}</span>
@@ -51,7 +56,7 @@ export default function CustomFilter(props: CustomFilterProps) {
                 >
                   {({ selected }) => (
                     <>
-                      <span 
+                      <span
                         className={`block truncate ${
                           selected ? "font-medium" : "font-normal"
                         }`}
