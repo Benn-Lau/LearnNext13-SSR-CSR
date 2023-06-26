@@ -16,10 +16,12 @@ I hope I learn something from this project
  - CTRL + SHIFT + V to view the Markdown
 
 
+
 ![Alt text](/public/github.svg "GitHub LOGO")
 
 This is a project from javascript mastery ,  
   Link:  https://youtu.be/pUNSHPyVryU
+  GitHub repo for og code with explaination : https://github.com/adrianhajdin/project_next13_car_showcase/tree/main
 
   <!-- Link bruh so ugly -->
 
