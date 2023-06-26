@@ -5,8 +5,23 @@ import { useRouter } from "next/navigation";
 import { Listbox, Transition } from "@headlessui/react";
 import Image from "next/image";
 export default function CustomFilter(props: CustomFilterProps) {
+  const router = useRouter()
   const { title, options } = props;
   const [selected, setselected] = useState(options[0]);
+
+
+  const handleUpdateParams = (type: string, value: string) => {
+    
+    const newPathName = '';
+
+    const searchParams = new URLSearchParams(window.location.search);
+
+    const newPathname = `${window.location.pathname} ? ${searchParams.toString}`
+
+    router.push(newPathName);
+  };
+
+  
   return (
     <div className=" w-fit">
       <Listbox value={selected} onChange={(e) => setselected(e)}>
@@ -41,7 +56,7 @@ export default function CustomFilter(props: CustomFilterProps) {
                 >
                   {({ selected }) => (
                     <>
-                      <span
+                      <span 
                         className={`block truncate ${
                           selected ? "font-medium" : "font-normal"
                         }`}
