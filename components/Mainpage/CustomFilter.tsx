@@ -4,19 +4,14 @@ import React, { Fragment, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Listbox, Transition } from "@headlessui/react";
 import Image from "next/image";
+import { updateSearchParams } from "@/utils";
 export default function CustomFilter(props: CustomFilterProps) {
   const router = useRouter()
   const { title, options } = props;
   const [selected, setselected] = useState(options[0]);
 
-
-  const handleUpdateParams = (type: string, value: string) => {
-    
-    const newPathName = '';
-
-    const searchParams = new URLSearchParams(window.location.search);
-
-    const newPathname = `${window.location.pathname} ? ${searchParams.toString}`
+  const handleUpdateParams = (e: { title: string; value: string }) => {
+    const newPathName = updateSearchParams(title, e.value.toLowerCase());
 
     router.push(newPathName);
   };
