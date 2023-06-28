@@ -5,7 +5,7 @@ If you want to Know how all of this works check the links out:
 This is a project from javascript mastery ,  
  Link: [Youtube video](https://youtu.be/pUNSHPyVryU)
 
-For og code with explaination : [GitHub Repo](https://github.com/adrianhajdin/project_next13_car_showcase/tree/main)
+For **OG code** with explanation : [GitHub Repo](https://github.com/adrianhajdin/project_next13_car_showcase/tree/main)
 
 ## What I learn from this project
 
@@ -13,6 +13,9 @@ For og code with explaination : [GitHub Repo](https://github.com/adrianhajdin/pr
 - Bundling Environment Variables for the Browser
 - How to set up to call API using HTTPS
 - How to write Markdown
+
+## Before you clone this repo READ THIS:
+This is a project I learn from [Youtuber Javascript Mastery](https://www.youtube.com/@javascriptmastery) . He has a [Git Repo](https://github.com/adrianhajdin/project_next13_car_showcase) for this project which I simply just learn from his video , edit some of his mistake and learn from it , I love his dedication so please support him !! 
 
 ## How to set up .env ?
 
@@ -28,10 +31,11 @@ Make sure not to commit the .env file to version control systems like Git, as it
 
 In your application code or development setup, you can access these variables by using a library or method to load the contents of the .env file into your application's environment.
 
+
 ### Problem occurs for me when Image cannot load cause by unable to load env variables
 
 - Solution : Bundling Environment Variables for the Browser
-- the problem occurs cause the browser cannot read environment variables , I change the env variable to follow next js
+- the problem occurs cause the browser cannot read environment variables , I change the env variable to follow next js docs - read .env variables
 
 ### Learning Markdown
 
