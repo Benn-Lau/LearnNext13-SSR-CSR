@@ -16,6 +16,14 @@ I hope I learn something from this project
  - CTRL + SHIFT + V to view the Markdown
 
 
+### Changing form server side render to client side render in homepage
+use usestate and fetch component in different way.
+
+
+
+
+
+
 
 ![Alt text](/public/github.svg "GitHub LOGO")
 
@@ -24,6 +32,8 @@ This is a project from javascript mastery ,
   GitHub repo for og code with explaination : https://github.com/adrianhajdin/project_next13_car_showcase/tree/main
 
   <!-- Link bruh so ugly -->
+
+
 
 ## Bug in this application causing scroll resetting
 
