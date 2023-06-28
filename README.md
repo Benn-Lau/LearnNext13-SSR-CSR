@@ -38,3 +38,5 @@ note: this is not my fault its next js team ... I hope it fix 24/06/23 20:03
  idk why no error shows before I changed the searchparans in Show more bttn . 
 
  Error should show and the carcard should be render but It don't happen .
+
+** Problem fixed !!** *Line 29 in page.tsx* 28/06/23
