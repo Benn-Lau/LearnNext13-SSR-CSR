@@ -15,7 +15,8 @@ I hope I learn something from this project
  - double space to have a soft break 
  - CTRL + SHIFT + V to view the Markdown
 
-
+### .env variables
+- remember to use NEXT_PUBLIC_ read more in '[Next's documentation](https://nextjs.org/docs/app/building-your-application/configuring/environment-variables#bundling-environment-variables-for-the-browser)'
 
 ![Alt text](/public/github.svg "GitHub LOGO")
 
@@ -27,5 +28,5 @@ This is a project from javascript mastery ,
 
 ## Bug in this application causing scroll resetting
 
-more info on git hub link:https://github.com/vercel/next.js/issues/49087
+more info on git hub link: '[Link](https://github.com/vercel/next.js/issues/49087)'
 note: this is not my fault its next js team ... I hope it fix 24/06/23 20:03
