@@ -57,6 +57,8 @@ In your application code or development setup, you can access these variables by
 ## Whats if there is a problem?
 I don't care but if you need my help just go to the
 
+## Hmm it seems like deployment work
+Some error were cause by minor error and eslint conflict with prettier code formater 
 ## Bug in this application causing scroll resetting
 
 more info on git hub link: [Link](https://github.com/vercel/next.js/issues/49087)
