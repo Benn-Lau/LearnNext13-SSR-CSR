@@ -21,12 +21,14 @@ I hope I learn something from this project
 ![Alt text](/public/github.svg "GitHub LOGO")
 
 This is a project from javascript mastery ,  
-  Link:  https://youtu.be/pUNSHPyVryU
-  GitHub repo for og code with explaination : https://github.com/adrianhajdin/project_next13_car_showcase/tree/main
+  Link: [Youtube video](https://youtu.be/pUNSHPyVryU)
+  
+  For og code with explaination : [GitHub Repo]( https://github.com/adrianhajdin/project_next13_car_showcase/tree/main)
 
   <!-- Link bruh so ugly -->
 
 ## Bug in this application causing scroll resetting
 
-more info on git hub link: '[Link](https://github.com/vercel/next.js/issues/49087)'
+more info on git hub link: [Link](https://github.com/vercel/next.js/issues/49087)
+
 note: this is not my fault its next js team ... I hope it fix 24/06/23 20:03
