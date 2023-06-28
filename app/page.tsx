@@ -7,6 +7,7 @@ import Carcard from "@/components/carCard/Carcard";
 import { fuels, manufacturers, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
+import { error } from "console";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -33,16 +34,16 @@ export default function Home() {
         model: model || "",
       });
       setAllCars(result);
-    } catch {
-      console.log("ERROR");
+    } catch(error) {
+      console.log(error);
     } finally {
       setLoading(false);
     }
   };
   useEffect(() => {
     // note Call function to fetch cars
-    getCars;
-  });
+    getCars();
+  },[fuel,year,limit,manufacturer,model]);
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
