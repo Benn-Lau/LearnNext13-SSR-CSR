@@ -5,8 +5,10 @@ If you want to Know how all of this works check the links out:
 This is a project from javascript mastery ,  
  Link: [Youtube video](https://youtu.be/pUNSHPyVryU)
 
-For og code with explaination : [GitHub Repo](https://github.com/adrianhajdin/project_next13_car_showcase/tree/main)
+For **OG code** with explaination : [GitHub Repo](https://github.com/adrianhajdin/project_next13_car_showcase/tree/main)
 
+
+# You are In Client Side Rendering Branch
 ## What I learn from this project
 
 - How to set up env variables
