@@ -5,6 +5,8 @@ If you want to Know how all of this works check the links out:
 This is a project from javascript mastery ,  
  Link: [Youtube video](https://youtu.be/pUNSHPyVryU)
 
+ View this project live **[Here](https://learn-next13-ssr-csr.vercel.app/)**
+
 For **OG code** with explanation : [GitHub Repo](https://github.com/adrianhajdin/project_next13_car_showcase/tree/main)
 
 ## What I learn from this project
@@ -57,11 +59,21 @@ In your application code or development setup, you can access these variables by
 ## Whats if there is a problem?
 I don't care but if you need my help just go to the
 
-## Hmm it seems like deployment work
+## Hmm it seems like deployment don't work?
 Some error were cause by minor error and eslint conflict with prettier code formater 
+
+The error look like this in build time on vercel:
+```
+Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+```
+The solution is [here](https://nextjs.org/docs/pages/building-your-application/configuring/eslint#disabling-rules)
+
+minor adjustment were made to fix it but idk will cause security/unstable issue
 ## Bug in this application causing scroll resetting
 
 more info on git hub link: [Link](https://github.com/vercel/next.js/issues/49087)
+
+
 
 note: this is not my fault its next js team ... I hope it fix 24/06/23 20:03
 
