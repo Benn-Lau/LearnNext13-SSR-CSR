@@ -36,7 +36,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car) => (
-                <Carcard car={car} />
+                <Carcard car={car} key={car.class} />
               ))}
             </div>
             <ShowMore 
