@@ -31,6 +31,7 @@ Make sure not to commit the .env file to version control systems like Git, as it
 
 In your application code or development setup, you can access these variables by using a library or method to load the contents of the .env file into your application's environment.
 
+(by GPT-3)
 
 ### Problem occurs for me when Image cannot load cause by unable to load env variables
 
