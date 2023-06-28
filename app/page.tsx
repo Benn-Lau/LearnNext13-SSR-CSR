@@ -1,12 +1,20 @@
 import CustomFilter from "@/components/Mainpage/CustomFilter";
 import HeroSection from "@/components/Mainpage/Hero";
 import SearchBar from "@/components/Mainpage/SearchBar";
+import ShowMore from "@/components/Mainpage/ShowMore";
 import Carcard from "@/components/carCard/Carcard";
+import { fuels, manufacturers, yearsOfProduction } from "@/constants";
+import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
-import Image from "next/image";
 
-export default async function Home() {
-  const allCars = await fetchCars();
+export default async function Home({ searchParams }: HomeProps) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.model || "",
+  });
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
@@ -20,17 +28,21 @@ export default async function Home() {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter title="fuel" />
-            <CustomFilter title="year" />
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
         {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrapper">
-              {allCars?.map((car)=>(
+              {allCars?.map((car) => (
                 <Carcard car={car} />
               ))}
             </div>
+            <ShowMore 
+              /** //fixed  OG code have earchParams.pageNumber which is not a property in the url params */
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length} />
           </section>
         ) : (
           <div className="home__error-container">
