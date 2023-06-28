@@ -1,3 +1,4 @@
+'use client'
 import CustomFilter from "@/components/Mainpage/CustomFilter";
 import HeroSection from "@/components/Mainpage/Hero";
 import SearchBar from "@/components/Mainpage/SearchBar";
@@ -7,15 +8,45 @@ import { fuels, manufacturers, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
+import { useState , useEffect} from "react";
 
-export default async function Home({ searchParams }: HomeProps) {
-  const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || 2022,
-    fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
-    model: searchParams.model || "",
-  });
+export default function Home() {
+  // note search states
+  const [allCars, setAllCars] = useState([]);
+  const [loading, setLoading] = useState(false);
+  // note filter states
+  const [manufacturer, setManufacturer] = useState("");
+  const [model, setmodel] = useState("");
+  // note filter states
+  const [fuel, setFuel] = useState("");
+  const [year, setYear] = useState(2022);
+  // note pagination state
+  const [limit, setLimit] = useState(10);
+
+  const getCars = async () => {
+    setLoading(true)
+    try {
+      // fix I found the culpit because I name it return => result in fetchCars a bug occurs it fix the problem after I change the result to car Result ... my mistake ... lel  
+      const carResult = await fetchCars({
+        manufacturer: manufacturer,
+        year: year,
+        fuel: fuel,
+        limit: limit ,
+        model: model,
+      });
+      setAllCars(carResult);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    // note Call function to fetch cars
+    getCars();
+  }, [fuel, year, limit, manufacturer, model]);
+
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   return (
@@ -40,10 +71,11 @@ export default async function Home({ searchParams }: HomeProps) {
                 <Carcard car={car} />
               ))}
             </div>
-            <ShowMore 
+            <ShowMore
               /** //fixed  OG code have earchParams.pageNumber which is not a property in the url params */
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > allCars.length} />
+              pageNumber={(limit || 10) / 10}
+              isNext={(limit || 10) > allCars.length}
+            />
           </section>
         ) : (
           <div className="home__error-container">

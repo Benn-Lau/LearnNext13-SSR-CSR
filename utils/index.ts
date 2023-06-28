@@ -5,8 +5,8 @@ function getEnvVariable() {}
 export async function fetchCars(filters: FilterProps) {
   const { manufacturer, year, model, limit, fuel } = filters;
   const headers = {
-    "X-RapidAPI-Key": `${process.env.X_RapidAPI_Key}`,
-    "X-RapidAPI-Host": `${process.env.X_RapidAPI_Host}`,
+    "X-RapidAPI-Key": `${process.env.NEXT_PUBLIC_X_RapidAPI_Key}`,
+    "X-RapidAPI-Host": `${process.env.NEXT_PUBLIC_X_RapidAPI_Host}`,
   };
 
   const response = await fetch(
