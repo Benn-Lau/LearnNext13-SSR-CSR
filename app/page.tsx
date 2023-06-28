@@ -87,8 +87,7 @@ export default function Home() {
                 <h2>Loading</h2>
               </div>
             )}
-            <ShowMore
-              /** //fixed  OG code have earchParams.pageNumber which is not a property in the url params */
+            <ShowMore             
               pageNumber={limit/ 10}
               isNext={limit > allCars.length}
               setLimit={setLimit}
@@ -97,7 +96,7 @@ export default function Home() {
         ) : (
           <div className="home__error-container">
             <h2 className=" text-black text-xl font-bold">No results</h2>
-            <p>{allCars?.message}</p>
+            <p>{'message'}</p>
           </div>
         )}
       </div>
