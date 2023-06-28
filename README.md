@@ -13,10 +13,13 @@ For **OG code** with explanation : [GitHub Repo](https://github.com/adrianhajdin
 - Bundling Environment Variables for the Browser
 - How to set up to call API using HTTPS
 - How to write Markdown
+- From Server Side render to Client Side Render
 
 ## Before you clone this repo READ THIS:
-This is a project I learn from [Youtuber Javascript Mastery](https://www.youtube.com/@javascriptmastery) . He has a [Git Repo](https://github.com/adrianhajdin/project_next13_car_showcase) for this project which I simply just learn from his video , edit some of his mistake and learn from it , I love his dedication so please support him !! 
+This is a project I learn from [Youtuber Javascript Mastery](https://www.youtube.com/@javascriptmastery) . He has a [Git Repo](https://github.com/adrianhajdin/project_next13_car_showcase) for this project which I simply just learn from his video , edit some of his mistake and learn from it , I love his dedication so please support him !! **-- end --**
 
+## Where is Client Side Render ?
+Check out the branches , the client side render version is in another branch . The main brach is server side render .
 ## How to set up .env ?
 
 Create a file named .env in the root directory of your project.
@@ -50,6 +53,9 @@ In your application code or development setup, you can access these variables by
 ![Alt text](/public/github.svg "GitHub LOGO")
 
   <!-- Link bruh so ugly -->
+
+## Whats if there is a problem?
+I don't care but if you need my help just go to the
 
 ## Bug in this application causing scroll resetting
 
