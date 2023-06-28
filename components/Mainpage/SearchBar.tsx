@@ -1,6 +1,4 @@
 "use client";
-import React from "react";
-import SearchManufactuere from "./SearchManufactuere";
 import { useState } from "react";
 import SearchManufacturer from "./SearchManufactuere";
 import { SeartBttnProps } from "@/types";
