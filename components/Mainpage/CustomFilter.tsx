@@ -6,15 +6,8 @@ import { Listbox, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { updateSearchParams } from "@/utils";
 export default function CustomFilter(props: CustomFilterProps) {
-  const router = useRouter();
-  const { title, options } = props;
+  const { title, options, setFilter } = props;
   const [selected, setselected] = useState(options[0]);
-
-  const handleUpdateParams = (e: { title: string; value: string }) => {
-    const newPathName = updateSearchParams(title, e.value.toLowerCase());
-
-    router.push(newPathName);
-  };
 
   return (
     <div className=" w-fit">
@@ -22,7 +15,7 @@ export default function CustomFilter(props: CustomFilterProps) {
         value={selected}
         onChange={(e) => {
           setselected(e);
-          handleUpdateParams(e);
+          setFilter(e.value);
         }}
       >
         <div className=" relative w-fit z-10">

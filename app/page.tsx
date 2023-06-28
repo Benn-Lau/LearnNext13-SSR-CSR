@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import CustomFilter from "@/components/Mainpage/CustomFilter";
 import HeroSection from "@/components/Mainpage/Hero";
 import SearchBar from "@/components/Mainpage/SearchBar";
@@ -8,7 +8,7 @@ import { fuels, manufacturers, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   // note search states
@@ -16,7 +16,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   // note filter states
   const [manufacturer, setManufacturer] = useState("");
-  const [model, setmodel] = useState("");
+  const [model, setModel] = useState("");
   // note filter states
   const [fuel, setFuel] = useState("");
   const [year, setYear] = useState(2022);
@@ -24,14 +24,14 @@ export default function Home() {
   const [limit, setLimit] = useState(10);
 
   const getCars = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      // fix I found the culpit because I name it return => result in fetchCars a bug occurs it fix the problem after I change the result to car Result ... my mistake ... lel  
+      // fix I found the culpit because I name it return => result in fetchCars a bug occurs it fix the problem after I change the result to car Result ... my mistake ... lel
       const carResult = await fetchCars({
         manufacturer: manufacturer,
         year: year,
         fuel: fuel,
-        limit: limit ,
+        limit: limit,
         model: model,
       });
       setAllCars(carResult);
@@ -58,23 +58,40 @@ export default function Home() {
           <p>Explore the cars you might like</p>
         </div>
         <div className="home__filters">
-          <SearchBar />
+          <SearchBar setManufacturer={setManufacturer} setModel={setModel} />
           <div className="home__filter-container">
-            <CustomFilter title="fuel" options={fuels} />
-            <CustomFilter title="year" options={yearsOfProduction} />
+            <CustomFilter title="fuel" options={fuels} setFilter={setFuel} />
+            <CustomFilter
+              title="year"
+              options={yearsOfProduction}
+              setFilter={setYear}
+            />
           </div>
         </div>
-        {!isDataEmpty ? (
+        {allCars.length > 0 ? (
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car) => (
                 <Carcard car={car} />
               ))}
             </div>
+            {loading && (
+              <div className="mt-16 w-full flex-center">                
+                <Image
+                  src={`/loader.svg`}
+                  alt="loader"
+                  width={50}
+                  height={50}
+                  className=" object-contain"
+                />
+                <h2>Loading</h2>
+              </div>
+            )}
             <ShowMore
               /** //fixed  OG code have earchParams.pageNumber which is not a property in the url params */
-              pageNumber={(limit || 10) / 10}
-              isNext={(limit || 10) > allCars.length}
+              pageNumber={limit/ 10}
+              isNext={limit > allCars.length}
+              setLimit={setLimit}
             />
           </section>
         ) : (

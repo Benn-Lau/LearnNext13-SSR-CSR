@@ -5,14 +5,17 @@ import React from "react";
 import Custombttn from "./Custombttn";
 import { updateSearchParams } from "@/utils";
 
-export default function ShowMore({ pageNumber, isNext }: ShowMoreProps) {
+export default function ShowMore({
+  pageNumber,
+  isNext,
+  setLimit,
+}: ShowMoreProps) {
   const router = useRouter();
 
   const handleNavigation = () => {
     const newLimit = (pageNumber + 1) * 10;
-    const newPathName = updateSearchParams("limit", `${newLimit}`);
 
-    router.push(newPathName);
+    setLimit(newLimit);
   };
   return (
     <div className=" w-full flex-center gap-5 mt-10">
@@ -29,5 +32,5 @@ export default function ShowMore({ pageNumber, isNext }: ShowMoreProps) {
 }
 
 // bug Audi Rs E-Tron Gt idk api error or tf need to debug
-// note No clue why Audi Rs E-Tron Gt model not render but I can't find it after .. 
+// note No clue why Audi Rs E-Tron Gt model not render but I can't find it after ..
 // fix everythings seems fine after several test idk where the bug goes .. just put this here just in case
