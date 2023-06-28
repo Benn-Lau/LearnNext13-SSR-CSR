@@ -32,3 +32,9 @@ This is a project from javascript mastery ,
 more info on git hub link: [Link](https://github.com/vercel/next.js/issues/49087)
 
 note: this is not my fault its next js team ... I hope it fix 24/06/23 20:03
+
+## Problem I get stuck with
+ ### I can't get page.tsx to client side
+ idk why no error shows before I changed the searchparans in Show more bttn . 
+
+ Error should show and the carcard should be render but It don't happen .
